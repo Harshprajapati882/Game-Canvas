@@ -22,7 +22,8 @@
     // ...rest of the template
     "types": ["node"],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "#/*": ["./*"]
     }
   },
   "include": ["src"],
