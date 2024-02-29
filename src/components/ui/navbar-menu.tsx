@@ -26,7 +26,7 @@ export const MenuItem = ({
     <div onMouseEnter={() => setActive(item)} className="relative">
       <motion.p
         transition={{ duration: 0.3 }}
-        className="cursor-pointer text-black hover:opacity-[0.9] hover:bg-zinc-900 rounded-lg py-[0.2vw] px-[0.5vw] dark:text-white "
+        className="cursor-pointer hover:opacity-[0.9] hover:bg-zinc-900 rounded-lg py-[0.2vw] px-[0.5vw] text-white "
       >
         {item}
       </motion.p>
@@ -41,7 +41,7 @@ export const MenuItem = ({
               <motion.div
                 transition={transition}
                 layoutId="active" // layoutId ensures smooth animation
-                className="bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl"
+                className="bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-white/[0.2] shadow-xl"
               >
                 <motion.div
                   layout // layout ensures smooth animation
@@ -98,7 +98,7 @@ export const ProductItem = ({
         className="flex-shrink-0 object-cover object-center rounded-md shadow-2xl scale-1 group-hover:scale-[1.02] transition-all duration-300"
       />
       <div>
-        <h4 className="text-xl font-bold mb-1 text-black dark:text-white group">
+        <h4 className="text-xl font-bold mb-1 text-white group">
           {title}
         </h4>
         <p className="text-sm max-w-[10rem] text-neutral-300 group">
