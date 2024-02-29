@@ -2,7 +2,7 @@ import HeroVideo from "@/assets/hero-opener.mp4";
 
 function Hero() {
   return (
-    <div className="relative w-full h-[88.3%]">
+    <div className="absolute w-full h-full">
       <video
         muted
         autoPlay

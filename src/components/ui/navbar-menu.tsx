@@ -16,11 +16,13 @@ export const MenuItem = ({
   active,
   item,
   children,
+  className,
 }: {
   setActive: (item: string) => void;
   active: string | null;
   item: string;
   children?: React.ReactNode;
+  className?: string;
 }) => {
   return (
     <div onMouseEnter={() => setActive(item)} className="relative">
@@ -41,7 +43,7 @@ export const MenuItem = ({
               <motion.div
                 transition={transition}
                 layoutId="active" // layoutId ensures smooth animation
-                className="bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-white/[0.2] shadow-xl"
+                className={cn("bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-white/[0.2] shadow-xl",className)}
               >
                 <motion.div
                   layout // layout ensures smooth animation
@@ -70,7 +72,7 @@ export const Menu = ({
   return (
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className={cn("relative w-full shadow-input flex px-8 py-6",className)}
+      className={cn("relative w-full shadow-input flex px-8 py-6", className)}
     >
       {children}
     </nav>
@@ -95,12 +97,10 @@ export const ProductItem = ({
         width={140}
         height={70}
         alt={title}
-        className="flex-shrink-0 object-cover object-center rounded-md shadow-2xl scale-1 group-hover:scale-[1.02] transition-all duration-300"
+        className="flex-shrink-0 object-cover object-center rounded-md shadow-2xl scale-1 group-hover:scale-[1.05] transition-all duration-300"
       />
       <div>
-        <h4 className="text-xl font-bold mb-1 text-white group">
-          {title}
-        </h4>
+        <h4 className="text-xl font-bold mb-1 text-white group">{title}</h4>
         <p className="text-sm max-w-[10rem] text-neutral-300 group">
           {description}
         </p>
@@ -111,10 +111,7 @@ export const ProductItem = ({
 
 export const HoveredLink = ({ children, ...rest }: any) => {
   return (
-    <a
-      {...rest}
-      className="text-neutral-200 hover:text-[#be3461] "
-    >
+    <a {...rest} className="text-neutral-200 hover:text-[#e9a8bd]">
       {children}
     </a>
   );

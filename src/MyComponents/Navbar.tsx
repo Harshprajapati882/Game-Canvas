@@ -14,9 +14,11 @@ import kimg from "@/assets/game-img/kaushik-f-game.jpg";
 
 function Navbar() {
   const [active, setActive] = useState<string | null>(null);
-
+  const blurBackground = "bg-black/60 backdrop-blur-lg";
   return (
-    <div className="relative w-full flex items-center justify-between bg-black">
+    <div
+      className={`fixed z-[999] w-full flex items-center justify-between ${blurBackground}`}
+    >
       <div id="logo" className="w-[3vw] h-[3vw] m-[1vw] mr-0">
         <img
           src={logo}
@@ -31,16 +33,21 @@ function Navbar() {
       ></div>
       <div className="w-full z-50 flex items-center">
         <div
-          className="font-['Sixtyfour'] text-[2vw] text-white mx-[1vw] cursor-pointer"
+          className="font-['Sixtyfour'] text-[2vw] text-white mx-[1vw] cursor-pointer hover:text-[#dadada]"
           onClick={() => window.location.reload()}
         >
-          GamingHub
+          GameCanvas
         </div>
         <Menu
           setActive={setActive}
           className="flex justify-end gap-[3vw] ml-[5vw]"
         >
-          <MenuItem setActive={setActive} active={active} item="Services">
+          <MenuItem
+            setActive={setActive}
+            active={active}
+            item="Services"
+            className={blurBackground}
+          >
             <div className="flex flex-col space-y-4 text-sm">
               <HoveredLink href="/trending-games">
                 Play Trending Games
@@ -50,17 +57,22 @@ function Navbar() {
               <HoveredLink href="/contect">Contect Us</HoveredLink>
             </div>
           </MenuItem>
-          <MenuItem setActive={setActive} active={active} item="Hot Games">
+          <MenuItem
+            setActive={setActive}
+            active={active}
+            item="Hot Games"
+            className={blurBackground}
+          >
             <div className="text-sm grid grid-cols-2 gap-10 p-4">
               <ProductItem
                 title="Kaushik Game"
-                href="https://algochurn.com"
+                href="https://kaushiksahu18.github.io/first-game-jump/"
                 src={kimg}
                 description="Clone of Dino jump game but with ai twist"
               />
               <ProductItem
                 title="Prathmesh Game"
-                href="https://tailwindmasterkit.com"
+                href="https://kaushiksahu18.github.io/prathmesh-game/"
                 src={pimg}
                 description="kaushik Clone bot college showcase"
               />
@@ -72,7 +84,12 @@ function Navbar() {
               />
             </div>
           </MenuItem>
-          <MenuItem setActive={setActive} active={active} item="Pricing">
+          <MenuItem
+            setActive={setActive}
+            active={active}
+            item="Pricing"
+            className={blurBackground}
+          >
             <div className="flex flex-col space-y-4 text-sm">
               <HoveredLink href="/hobby">Hobby</HoveredLink>
               <HoveredLink href="/individual">Individual</HoveredLink>
@@ -93,7 +110,7 @@ function Navbar() {
         <button className="text-white hover:bg-zinc-900 rounded-lg py-[0.2vw] px-[0.5vw]">
           SignUp
         </button>
-        <button className="inline-flex animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-[0.5vw] py-[0.2vw] font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+        <button className="inline-flex animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-[1vw] py-[0.3vw] font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
           LogIn
         </button>
       </div>
