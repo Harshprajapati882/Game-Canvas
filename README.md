@@ -1,3 +1,3 @@
-# Gaming Hub
+# GameCanvas
 
-[Gaming Hub live link](https://gaminghub-minor2.netlify.app)
+[Gaming Hub live link](https://gamecanvas.netlify.app)
